@@ -1,0 +1,318 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "TT Lakes Condensed", sans-serif;
+}
+
+.GIGA-WRAPPER {
+    height: 100vh;
+    background: linear-gradient(#618e82, #a3284c);
+    background-repeat: no-repeat;
+}
+
+.wrapper--base-configs {
+    display: flex;
+    flex-direction: column;
+    /* Я уже не помню, зачем я эти две строки сверху поставил, но если их убрать, то вёрстка сломается. */
+    margin: 0 auto;
+    height: 600px;
+    max-width: 320px;
+}
+
+.header--flex {
+    display: flex;
+    flex: 0 0 88px;
+    align-items: center;
+    background-color: white;
+}
+
+.header--bottom-shadow {
+    border-bottom: 1px solid #D9FFF5;
+}
+
+.header-flex-line-for-320px--stretching-and-spacing {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%;
+}
+
+.header-flex-line-for-768px {
+    display: none;
+}
+
+.main {
+    flex: 1;
+    background-color: #f8f8f8;
+}
+
+.text-header {
+    height: 40px;
+    font-size: 30px;
+}
+
+.text-header::before { /* Добавляет голубой апендикс слева от текста. */
+    content: '';
+    width: 4px;
+    position: absolute;
+    height: 40px;
+    background-color: #41F6D7;
+    border-radius: 0 100% 100% 0;
+}
+
+.text-header--margin {
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+.text-header-content--position-and-cosmetics {
+    float: left;
+    padding-left: 16px;
+    letter-spacing: 0.2px;
+}
+
+.text-header-addiction-for-1120px {
+    display: none
+}
+
+.scroll {
+    max-height: 100%;
+    display: flex;
+    overflow-y: scroll;
+    margin-left: 16px;
+    mask-image: linear-gradient(to right, black calc(100% - 10%), transparent 100%); /* Градиент в конце скролла. Почему-то при маштабировании назад (до 80% и далее),
+     скролл становится расплывчатым будто кто-то очки снял. ХЗ почему так происходит, но альтернативы не нашёл. */
+}
+
+.scroll .scroll__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    padding-left: 15px;
+    padding-right: 15px;
+    white-space: nowrap;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    font-weight: 500;
+    color: #7E7E82;
+    background-color: #f8f8f8;
+    border: 2px solid #F8F8F8;
+    border-radius: 6px;
+}
+
+.scroll .scroll__item:last-child {
+    margin-right: 5%;
+}
+
+.scroll .scroll__item:active {
+    background-color: #afafaf;
+}
+
+.scroll .scroll__item:focus {
+    border: 2px solid #B8FFEC;
+    background: #FFFFFF;
+}
+
+.paragraph {
+    width: 288px;
+    height: 90px;
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+}
+
+.paragraph--margin {
+    margin: 24px 16px 24px 16px;
+}
+
+.hidden-text-1 {
+    display: none;
+}
+
+.hidden-text-2 {
+    display: none;
+}
+
+.read-more {
+    display: flex;
+    height: 24px;
+    margin-left: 16px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.read-more-button {
+    border: none;
+    background-color: #f8f8f8;
+    margin-right: 4px;
+}
+
+.photo {
+    width: 320px;
+    height: 176px;
+}
+
+.photo--margin {
+    margin-top: 24px;
+    margin-bottom: 34px;
+}
+
+@media (min-width: 767px) {
+    .wrapper--base-configs {
+        max-width: 768px;
+        height: 490px;
+    }
+
+    .header-flex-line-for-320px {
+        display: none;
+    }
+
+    .header-flex-line-for-768px--stretching-and-spacing {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 15px;
+        padding-right: 15px;
+        margin: 16px 0 16px 0;
+        width: 100%;
+    }
+
+    .header-flex-line-for-768px__left-side {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 200px;
+        height: 100%;
+    }
+
+    .header-flex-line-for-768px__right-side {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 300px;
+        height: 100%;
+    }
+
+    .text-header-content--position-and-cosmetics {
+        padding-left: 24px;
+    }
+
+    .scroll--margin {
+        margin-left: 24px;
+    }
+
+    .text-group {
+        float: left;
+    }
+
+    .text-group--margin {
+        margin-left: 24px;
+    }
+
+    .paragraph--margin {
+        margin-right: 0;
+    }
+
+    .hidden-text-1 {
+        display: inline-block;
+        width: 288px;
+    }
+
+    .hidden-text-1--margin {
+        margin: 0 0 16px 16px;
+    }
+
+    .photo {
+        float: right;
+        width: 360px;
+        height: 208px;
+    }
+
+    .photo--margin {
+        margin-bottom: 0;
+        margin-right: 25px;
+    }
+}
+
+@media (min-width: 1119px) {
+    .wrapper--base-configs {
+        max-width: 1120px;
+        height: 500px;
+    }
+
+    .header {
+        display: none;
+    }
+
+    .main__header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .text-header--margin {
+        margin: 40px 0 6px 0;
+    }
+
+    .text-header-addiction-for-1120px--flex-and-stuff {
+        display: flex;
+        margin: 40px 30px 0 0;
+        justify-content: space-between;
+        width: 326px;
+    }
+
+    .request-button-with-text--positioning {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 153px;
+    }
+
+    .status-button-with-text--positioning {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 147px;
+    }
+
+    .request-button-with-text__text-itself, .status-button-with-text__text-itself {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 24px;
+        letter-spacing: -0.2px;
+        color: #1B1C21;
+    }
+
+    .scroll {
+        overflow-y: visible;
+        white-space: pre-line;
+        mask-image: none;
+        flex-wrap: wrap;
+    }
+
+    .paragraph {
+        width: 490px;
+        height: 50px;
+    }
+
+    .hidden-text-1 {
+        display: none;
+    }
+
+    .hidden-text-2 {
+        display: inline-block;
+        width: 490px;
+    }
+
+    .photo {
+        width: 532px;
+        height: 307px;
+        margin-top: 0;
+    }
+}
